@@ -18,7 +18,8 @@
   transform: scale(1.3);
 } */
 .fruit img {
-  height:12vw; 
+max-width: 100%;
+border-radius: 4px;
 }
 
 .fruit .title {
@@ -51,3 +52,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.fruit{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
