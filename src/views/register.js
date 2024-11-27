@@ -39,7 +39,7 @@ export async function registerPage(ctx) {
 }
 
 async function onSubmit(ctx, data, event) {
-	if (data.email === '' || data.password === '') {
+	if (data.email.trim() === '' || data.password === '') {
 		return alert('All fields are required!');
 	}
 
@@ -47,7 +47,7 @@ async function onSubmit(ctx, data, event) {
 		return alert('Passwords do not match!');
 	}
 
-	await userService.register(data.email, data.password);
+	await userService.register(data.email.trim(), data.password);
 	event.target.reset();
 	ctx.page.redirect('/');
 }

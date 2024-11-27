@@ -45,11 +45,15 @@ export function createPage(ctx) {
 
 async function onSubmit(ctx, data, event) {
 
+	if(data.name.trim() === '' || data.imageUrl.trim() === '' || data.description.trim() === '' || data.nutrition.trim() === '') {
+		return alert('All fields are required!');
+	}
+
 	await service.create({
-		name: data.name,
-		imageUrl: data.imageUrl,
-		description: data.description,
-		nutrition: data.nutrition,
+		name: data.name.trim(),
+		imageUrl: data.imageUrl.trim(),
+		description: data.description.trim(),
+		nutrition: data.nutrition.trim(),
 	});
 
 	event.target.reset();

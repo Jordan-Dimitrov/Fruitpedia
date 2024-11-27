@@ -13,6 +13,22 @@ import { editPage } from './views/edit.js';
 import { searchPage } from './views/search.js';
 
 import { logout } from './api/user.js';
+import { getAccessToken } from './util.js';
+
+import { getAccessToken } from './util.js';
+
+function onLogout(ctx) {
+	logout();
+	ctx.page.redirect('/');
+}
+
+function requireLogin(ctx, next) {
+	if (getAccessToken() == null) {
+	  return page.redirect('/login');
+	}
+  
+	return next();
+}
 
 page(addSession);
 page(addRender);
@@ -29,15 +45,3 @@ page('/logout', onLogout);
 
 page.start();
 
-function onLogout(ctx) {
-	logout();
-	ctx.page.redirect('/');
-}
-
-function requireLogin(ctx, next) {
-	if (getAccessToken() == null) {
-	  return page.redirect('/login');
-	}
-  
-	return next();
-}
