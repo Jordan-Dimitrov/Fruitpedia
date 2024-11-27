@@ -1,4 +1,4 @@
-import { html, chep } from '../../node_modules/lit-html/lit-html.js';
+import { html, nothing } from '../../node_modules/lit-html/lit-html.js';
 import * as service from '../api/data.js';
 
 const detailsTemplate = (fruit, onDelete) => html`
@@ -17,7 +17,7 @@ const detailsTemplate = (fruit, onDelete) => html`
                         <a href="javascript:void(0)" @click=${onDelete}>Delete</a>
                     </div>
               `
-            : chep}
+            : nothing}
     </div>
 `;
 

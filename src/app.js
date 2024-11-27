@@ -13,7 +13,6 @@ import { editPage } from './views/edit.js';
 import { searchPage } from './views/search.js';
 
 import { logout } from './api/user.js';
-import { getAccessToken } from './util.js';
 
 import { getAccessToken } from './util.js';
 
